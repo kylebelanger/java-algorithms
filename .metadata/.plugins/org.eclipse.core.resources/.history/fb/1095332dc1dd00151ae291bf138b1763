@@ -1,0 +1,128 @@
+package assignment_one;
+import java.util.Scanner;
+
+/** =================================================================
+*   main Class
+*   ===============================================================*/
+public class main {
+
+	/** ----------------------------------------------------------------
+	*   Start global variables
+	*   ---------------------------------------------------------------*/
+	static Scanner keyboard = new Scanner(System.in);
+	private static int inputInt;
+	QueueIm queue;
+	LinkedListIm<Integer> ll;
+
+	/** ----------------------------------------------------------------
+	*   Start Methods
+	*   ---------------------------------------------------------------*/
+
+	/** ----------------------------------------------------------------
+	*   main - called on loading.
+	*   ---------------------------------------------------------------*/
+	public static void main(String[] args) {
+
+			// initial input
+			inputInt = welcomeMessage();
+
+			// application flow
+			while (inputInt != 0) {
+
+					// queue analysis
+					if (inputInt == 1) {
+							System.out.print("\nEnter queue capacity (integer): \t");
+							createQueue(getInput());
+
+							// queue options
+							System.out.print("\nQueue Analysis - \nEnter '0' to return to main menu. Enter '1' to enqueue. Enter '2' to dequeue. Enter '3' for front.\t");
+
+							// queue application flow
+							if (getInput() == 1) {
+									System.out.print("\nEnter item to add to queue");
+									queue.enqueue(getInput());
+							}
+							else if (getInput() == 2) {
+									queue.dequeue();
+							}
+							else if (getInput() == 3) {
+									queue.front();
+							}
+							else {
+									inputInt = welcomeMessage();
+							}
+					}
+					
+					// linked list analysis
+					else if (inputInt == 2) {
+							System.out.print("\nEnter linked list capacity (integer): \t");
+							createLinkedList(getInput());
+							inputInt = welcomeMessage();
+					}
+					else {
+							System.out.println("\nInvalid input value.");
+							inputInt = welcomeMessage();
+					}
+			}
+			System.out.print("\nTerminal exiting.");
+
+	}
+
+
+	/** ----------------------------------------------------------------
+	*   welcomeMessage - display message, get initial input
+	*		@return input
+	*   ---------------------------------------------------------------*/
+	private static int welcomeMessage() {
+			// message
+			System.out.println("\nData structure analysis - linked lists, and queues.\n\nEnter '0' to exit.\nEnter '1' to perform queue analysis.\nEnter '2' to perform linked list analysis.\n");
+		 	return getInput();
+	}
+
+	/** ----------------------------------------------------------------
+	*   getInput - resets keyboard input
+	*		@return input
+	*   ---------------------------------------------------------------*/
+	private static int getInput() {
+			return keyboard.nextInt();
+	}
+
+	/** ----------------------------------------------------------------
+	*   createQueue - calls the queue class
+	*   @param capacity
+	*   ---------------------------------------------------------------*/
+	private static void createQueue(int capacity) {
+			// create queue object with capacity of 10
+			queue = new QueueIm(capacity);
+			// message
+			System.out.println("\nCreating queue of '" + capacity + "' elements.");
+
+			// add x items to queue
+			for (int i = 0; i < capacity; i++) {
+				queue.enqueue(i);
+			}
+	}
+
+
+
+
+
+	/** ----------------------------------------------------------------
+	*   createLinkedList - calls likedlist class
+	*   @param capacity
+	*   ---------------------------------------------------------------*/
+	public static void createLinkedList(int capacity) {
+			ll = new LinkedListIm<Integer>();
+
+			for (int i = 0; i < capacity; i++) {
+				ll.addAfter(null, i);
+			}
+
+			//ll.addAfter(76, 54);
+			//ll.deleteAfter(76);
+			ll.traverse(false);
+			ll.addAfter(3, 100);
+			//ll.traverse(false);
+	}
+
+}

@@ -1,0 +1,88 @@
+package assignment_one;
+import java.util.Scanner;
+
+/** =================================================================
+*   main Class
+*   ===============================================================*/
+public class main {
+
+	static Scanner keyboard = new Scanner(System.in);
+	private static int inputInt;
+
+	/** ----------------------------------------------------------------
+	*   getInput - resets keyboard input
+	*		@return input
+	*   ---------------------------------------------------------------*/
+	private static int getInput() {
+			return keyboard.nextInt();
+	}
+
+	/** ----------------------------------------------------------------
+	*   main - called on loading.
+	*   ---------------------------------------------------------------*/
+	public static void main(String[] args) {
+
+			// application flow
+			while (inputInt != 0 || inputInt == -1) {
+
+					// message
+					System.out.println("Data structure analysis - linked lists, and queues.\n\nEnter '0' to exit.\nEnter '1' to perform queue analysis.\nEnter '2' to perform linked list analysis.\n");
+					inputInt = getInput();
+
+					if (inputInt == 1) {
+							System.out.print("\nEnter queue capacity (integer): \t");
+							createQueue(getInput());
+							inputInt = -1;
+					}
+					else if (inputInt == 2) {
+							System.out.print("\nEnter linked list capacity (integer): \t");
+							createLinkedList(getInput());
+							inputInt = -1;
+					}
+					else {
+						System.out.println("Invalid input value.");
+					}
+			}
+			System.out.print("\nTerminal exiting.");
+
+	}
+
+	/** ----------------------------------------------------------------
+	*   createQueue - calls the queue class
+	*   @param capacity
+	*   ---------------------------------------------------------------*/
+	public static void createQueue(int capacity) {
+			// create queue object with capacity of 10
+			QueueIm queue = new QueueIm(capacity);
+			System.out.println("\nCreating queue of '" + capacity + "' elements.");
+
+			// add x items to queue
+			for (int i = 0; i < capacity; i++) {
+				queue.enqueue(i);
+			}
+
+			// remove all items from queue
+			for (int i = 0; i < capacity; i++) {
+				queue.dequeue();
+			}
+	}
+
+	/** ----------------------------------------------------------------
+	*   createLinkedList - calls likedlist class
+	*   @param capacity
+	*   ---------------------------------------------------------------*/
+	public static void createLinkedList(int capacity) {
+			LinkedListIm<Integer> ll = new LinkedListIm<Integer>();
+
+			for (int i = 0; i < capacity; i++) {
+				ll.addAfter(null, i);
+			}
+
+			//ll.addAfter(76, 54);
+			//ll.deleteAfter(76);
+			ll.traverse(false);
+			ll.addAfter(3, 100);
+			//ll.traverse(false);
+	}
+
+}
