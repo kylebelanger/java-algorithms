@@ -87,7 +87,7 @@ public class main {
 												}
 												else if (subInput == 3) {
 														System.out.print(">\tEnter index to retrive: \t");
-														// algorithm to get index
+														ll.get(getInput());
 														subInput = linkedlistMessage();
 												}
 												else if (subInput == 4) {
@@ -137,7 +137,7 @@ public class main {
 	*		@return input
 	*   ---------------------------------------------------------------*/
 	private static int linkedlistMessage() {
-			System.out.print("\nLinkedList Analysis - \n\n\tEnter '0' to return to main menu. \n\tEnter '1' to add. \n\tEnter '2' to remove. \n\tEnter '3' to get at index. \n\tEnter '4' to traverse all elements. \n\tEnter '5' to bubble sort.");
+			System.out.print("\nLinkedList Analysis - \n\n\tEnter '0' to return to main menu. \n\tEnter '1' to add. \n\tEnter '2' to remove. \n\tEnter '3' to get at index. \n\tEnter '4' to traverse all elements.\n");
 			System.out.print("\n>\t");
 		 	return getInput();
 	}
@@ -155,7 +155,6 @@ public class main {
 	*   @param capacity
 	*   ---------------------------------------------------------------*/
 	private static void createQueue(int capacity) {
-			// create queue object with capacity of 10
 			queue = new QueueIm(capacity);
 			System.out.println("\nCreating queue of '" + capacity + "' elements.");
 

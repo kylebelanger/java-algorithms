@@ -12,6 +12,7 @@ public class LinkedListIm<T> {
     *   ---------------------------------------------------------------*/
     private Node<T> head;
     private Node<T> tail;
+    private int size = 0;
 
     /** ----------------------------------------------------------------
     *   Start Methods
@@ -28,6 +29,7 @@ public class LinkedListIm<T> {
         Node<T> nd = new Node<T>();
         Node<T> tmp = head;
         Node<T> refNode = null;
+        this.size++;
 
         // determine which action to perform based on param
         if (after != null) {
@@ -60,7 +62,7 @@ public class LinkedListIm<T> {
                 tmp.setNextRef(nd);
             }
             else {
-              System.out.println("Error: Cannot find element at specific index. Adding to front of list.");
+                System.out.println("Error: Cannot find element at specific index. Adding to front of list.");
             }
         }
         else {
@@ -111,9 +113,37 @@ public class LinkedListIm<T> {
                 tail = refNode;
             }
             System.out.println("Success: Deleted: " + tmp.getValue());
-        } else {
+            this.size--;
+        }
+        else {
             System.out.println("Error: Unable to find the given element.");
         }
+    }
+
+    /** ----------------------------------------------------------------
+    *   get - get at index
+    *   @param index
+    *   ---------------------------------------------------------------*/
+    public void get(T index){
+
+      Node<T> tmp = head;
+      Node<T> refNode = null;
+
+          // traverse all elements until given element is found
+          while (true){
+              if (tmp == null){
+                  break;
+              }
+              if(tmp.compareTo(index) == 0){
+                  //found the target node, add after this node
+                  refNode = tmp;
+                  System.out.println("\nSuccess: Found item '" + refNode.getValue() + "'.");
+              }
+              tmp = tmp.getNextRef();
+          }
+          if (refNode == null) {
+              System.out.println("\nError: could not find item at index '" + index + "'.");
+          }
     }
 
     /** ----------------------------------------------------------------
@@ -137,8 +167,7 @@ public class LinkedListIm<T> {
         }
 
         long estimatedTime = System.nanoTime() - startTime;
-        System.out.println("\nStatus: Completed in " + estimatedTime + "; All nodes returned. \n");
+        System.out.println("\nStatus: Completed in " + estimatedTime + "; " + this.size + " elements returned. \n");
     }
-
 
 }

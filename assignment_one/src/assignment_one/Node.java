@@ -47,7 +47,7 @@ public class Node<T> implements Comparable<T> {
     }
 
     /** ----------------------------------------------------------------
-    *   compareTo - override Comparable Class
+    *   compareTo
     *   @param node
     *   ---------------------------------------------------------------*/
     @Override
