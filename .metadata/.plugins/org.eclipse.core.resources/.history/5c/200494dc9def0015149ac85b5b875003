@@ -1,0 +1,26 @@
+package assignment_two;
+import java.util.Scanner;
+
+/** =================================================================
+*   main Class
+*   ===============================================================*/
+public class main {
+
+    /**
+     * Unit tests the <tt>BST</tt> data type.
+     */
+    public static void main(String[] args) {
+
+        // create new BST object
+        BST<String, Integer> st = new BST<String, Integer>();
+
+        // add items to tree
+        for (int i = 0; i < 10; i++) {
+          st.put("Key " + i, i);
+        }
+
+        System.out.println(st.get("Key 1"));
+
+    }
+
+}
