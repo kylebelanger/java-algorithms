@@ -12,7 +12,6 @@ public class main {
   	static Scanner keyboard = new Scanner(System.in);
   	private static int mainInput;
   	private static int subInput;
-    private static String stringInput;
   	private static Book bookOb;
     static BST<String, Integer> st;
     static RedBlackBST<String, Object> rb;
@@ -57,14 +56,6 @@ public class main {
   	*   ---------------------------------------------------------------*/
   	private static int getInput() {
   			return keyboard.nextInt();
-  	}
-  	
-    /** ----------------------------------------------------------------
-  	*   getInput - resets keyboard input
-  	*		@return input
-  	*   ---------------------------------------------------------------*/
-  	private static String getString() {
-  			return keyboard.next();
   	}
 
     /** ----------------------------------------------------------------
@@ -172,14 +163,9 @@ public class main {
               while (subInput != 0) {
                     // add
                     if (subInput == 1) {
-                        System.out.print(">\tEnter ID number to add: \t");
+                        System.out.print(">\tEnter item to add: \t");
                         subInput = getInput();
-                        System.out.print("\n>\tEnter Author name to add: \t");
-                        String author = getString();
-                        // ID, Author, Title
-                        Book bookOb = new Book(subInput, author);
-                        // add object to tree
-                        rb.put("Key " + subInput, bookOb);
+                        rb.put("Key " + subInput, subInput);
                         subInput = BSTMessage();
                     }
                     // remove
@@ -192,8 +178,7 @@ public class main {
                     else if (subInput == 3) {
                         System.out.print(">\tEnter key to search: \t");
                         bookOb = (Book) rb.get("Key " + getInput());
-                        System.out.println("Returning key: " + bookOb.getID());
-                        bookOb.print();
+                        System.out.println("\nReturning: Value " + bookOb.print());
                         subInput = BSTMessage();
                     }
                     // inOrder traverse

@@ -64,7 +64,7 @@ public class main {
   	*		@return input
   	*   ---------------------------------------------------------------*/
   	private static String getString() {
-  			return keyboard.next();
+  			return keyboard.nextLine();
   	}
 
     /** ----------------------------------------------------------------
@@ -174,10 +174,11 @@ public class main {
                     if (subInput == 1) {
                         System.out.print(">\tEnter ID number to add: \t");
                         subInput = getInput();
-                        System.out.print("\n>\tEnter Author name to add: \t");
-                        String author = getString();
+                        System.out.print(">\tEnter Author name to add: \t");
+                        stringInput = getString();
+                        System.out.print(">\tEnter Title name to add: \t");
                         // ID, Author, Title
-                        Book bookOb = new Book(subInput, author);
+                        Book bookOb = new Book(subInput, stringInput, getString());
                         // add object to tree
                         rb.put("Key " + subInput, bookOb);
                         subInput = BSTMessage();

@@ -1,0 +1,18 @@
+public class Book {
+    private String author;
+    private String title;
+    private int ID;
+
+    public Book() {
+      this.ID = null;
+    }
+    public Book(int ID) {
+      this.ID = ID;
+      this.author = "George Orwell";
+      this.title = "1984"
+    }
+
+    public void print() {
+      System.out.println("ID: " + ID + "Title: " + title + "Author: " + author);
+    }
+}

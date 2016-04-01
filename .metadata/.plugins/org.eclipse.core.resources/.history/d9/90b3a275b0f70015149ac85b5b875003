@@ -58,14 +58,6 @@ public class main {
   	private static int getInput() {
   			return keyboard.nextInt();
   	}
-  	
-    /** ----------------------------------------------------------------
-  	*   getInput - resets keyboard input
-  	*		@return input
-  	*   ---------------------------------------------------------------*/
-  	private static String getString() {
-  			return keyboard.next();
-  	}
 
     /** ----------------------------------------------------------------
   	*   createBST - create binary search tree
@@ -174,10 +166,11 @@ public class main {
                     if (subInput == 1) {
                         System.out.print(">\tEnter ID number to add: \t");
                         subInput = getInput();
-                        System.out.print("\n>\tEnter Author name to add: \t");
-                        String author = getString();
+                        System.out.print(">\tEnter Author name to add: \t");
+                        stringInput = getInput();
+                        System.out.print(">\tEnter Title name to add: \t");
                         // ID, Author, Title
-                        Book bookOb = new Book(subInput, author);
+                        Book bookOb = new Book(subInput, stringInput, getInput());
                         // add object to tree
                         rb.put("Key " + subInput, bookOb);
                         subInput = BSTMessage();

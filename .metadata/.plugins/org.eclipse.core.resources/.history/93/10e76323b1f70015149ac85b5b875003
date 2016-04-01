@@ -64,7 +64,7 @@ public class main {
   	*		@return input
   	*   ---------------------------------------------------------------*/
   	private static String getString() {
-  			return keyboard.next();
+  			return keyboard.nextLine();
   	}
 
     /** ----------------------------------------------------------------

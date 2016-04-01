@@ -1,0 +1,24 @@
+package assignment_two;
+
+public class Book {
+    private String author;
+    private String title;
+    private int ID;
+
+    public Book() {
+      this.ID = 0;
+    }
+    public Book(int ID) {
+      this.ID = ID;
+      this.author = "George Orwell";
+      this.title = "1984";
+    }
+    
+    public int getID() {
+    	return ID;
+    }
+
+    public void print() {
+      System.out.println("ID: " + ID + "Title: " + title + "Author: " + author);
+    }
+}
