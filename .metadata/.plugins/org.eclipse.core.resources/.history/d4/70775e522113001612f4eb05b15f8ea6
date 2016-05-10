@@ -1,0 +1,88 @@
+// assignment_three package
+package assignment_three;
+// dependencies
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/* 	main - main class
+ *	----------------------
+*/
+public class main {
+
+	// global variables
+	static Scanner keyboard = new Scanner(System.in);
+	static int maxVertice = 100;
+	static int maxRpw = 100;
+
+	/* 	main - called on loading.
+	 * 	@throws IOException
+	 * 	----------------------
+	*/
+	public static void main(String[] args) throws IOException {
+
+			// new array list
+			ArrayList<String> list = new ArrayList<String>();
+
+			// read the file
+			try (BufferedReader br = new BufferedReader(new FileReader("src/facebook.txt"))) {
+			    String line;
+
+					while ((line = br.readLine()) != null) {
+			       // process the line.
+						 list.add(line);
+			    }
+			}
+
+/*
+			// for each item in list (i.e. each line in file)
+			// determine the max ID value
+			for (String item: list) {
+					// split spaces in string
+					// example in file: "0 2", "0 4", "0 6"
+					String[] splited = item.split("\\s+");
+					calcMaxRow(splited[0]);
+					calcMaxVertice(splited[1]);
+			}
+
+			// create an x-vertex graph.
+			System.out.println("Creating a graph with " + maxVertice + " vertices \n " + maxRpw + " rows.");
+
+			// create graph object
+			UDGraph graph = new UDGraph(maxVertice);
+
+			// for each item in list (i.e. each line in file)
+			for (String item: list) {
+					// split spaces in string
+					String[] splited = item.split("\\s+");
+					// add edge to graph
+					graph.addEdge(Integer.parseInt(splited[0]), Integer.parseInt(splited[1]));
+			}
+
+      System.out.println("\nThe original graph is\n" + graph);
+	}
+
+	/ 	calcMaxRow - calculate the max row ID used for graph axis
+	 * 	@param value to test against
+	 * 	----------------------
+
+	private static void calcMaxRow(String value) {
+			if (Integer.parseInt(value) > maxRpw) {
+						maxRpw = Integer.parseInt(value) + 1;
+			}
+	}
+
+	 	calcMaxVertice - calculate the maximum ID value used for graph axis
+	 * 	@param value to test against
+	 * 	----------------------
+
+	private static void calcMaxVertice(String value) {
+			if (Integer.parseInt(value) > maxVertice) {
+						maxVertice = Integer.parseInt(value) + 1;
+			}
+	}*/
+System.out.println("complete");
+	}
+}

@@ -1,0 +1,14 @@
+package assignment_three;
+
+public class main {
+
+  /**
+    * Unit tests the <tt>EdgeWeightedGraph</tt> data type.
+    */
+   public static void main(String[] args) {
+       In line = new In(args[0]);
+       EdgeWeightedGraph G = new EdgeWeightedGraph(line);
+       StdOut.println(G);
+   }
+
+}

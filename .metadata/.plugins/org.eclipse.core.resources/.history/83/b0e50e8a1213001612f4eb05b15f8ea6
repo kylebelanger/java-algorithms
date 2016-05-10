@@ -1,0 +1,62 @@
+package assignment_three;
+import java.util.Scanner;
+
+/** =================================================================
+*   main Class
+*   ===============================================================*/
+public class main {
+
+	/** ----------------------------------------------------------------
+	*   Start global variables
+	*   ---------------------------------------------------------------*/
+	static Scanner keyboard = new Scanner(System.in);
+	private static int mainInput;
+	private static int subInput;
+
+	/** ----------------------------------------------------------------
+	*   Start Methods
+	*   ---------------------------------------------------------------*/
+
+	/** ----------------------------------------------------------------
+	*   main - called on loading.
+	*   ---------------------------------------------------------------*/
+	public static void main(String[] args) {
+
+      System.out.println("\n *** Lab 12:  " +
+                         "Square the unweighted directed graph! *** \n");
+
+      // Create an 11-vertex graph.
+      System.out.println("Creating a graph with 11 vertices");
+      UDGraph graph = new UDGraph(11);
+      graph.addEdge(0, 8);
+      graph.addEdge(1, 0);
+      graph.addEdge(1, 3);
+      graph.addEdge(2, 0);
+      graph.addEdge(3, 2);
+      graph.addEdge(3, 5);
+      graph.addEdge(4, 2);
+      graph.addEdge(4, 5);
+      graph.addEdge(5, 7);
+      graph.addEdge(5, 9);
+      graph.addEdge(6, 4);
+      graph.addEdge(6, 7);
+      graph.addEdge(8, 4);
+      graph.addEdge(8, 6);
+      graph.addEdge(8, 10);
+      graph.addEdge(9, 1);
+      graph.addEdge(10, 6);
+
+      boolean goodJob = true;
+
+
+      System.out.println("\nThe original graph is\n" + graph);
+      if (!t1String.equals(graph.toString())) {
+        System.out.println("Error:  the original graph should be\n" +
+                           t1String);
+        goodJob = false;
+      }
+
+
+  }
+
+}

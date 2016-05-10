@@ -1,0 +1,51 @@
+package assignment_three;
+import java.util.Random;
+import java.util.Scanner;
+
+/** =================================================================
+*   main Class
+*   ===============================================================*/
+public class main {
+
+	/** ----------------------------------------------------------------
+	*   Start global variables
+	*   ---------------------------------------------------------------*/
+	static Scanner keyboard = new Scanner(System.in);
+	private static int mainInput;
+	private static int subInput;
+
+	/** ----------------------------------------------------------------
+	*   Start Methods
+	*   ---------------------------------------------------------------*/
+
+	/** ----------------------------------------------------------------
+	*   main - called on loading.
+	*   ---------------------------------------------------------------*/
+	public static void main(String[] args) {
+
+			try (BufferedReader br = new BufferedReader(new FileReader("sample.txt"))) {
+				    String line;
+						ArrayList<String> list = new ArrayList<String>();
+
+						while ((line = br.readLine()) != null) {
+				       // process the line.
+							 list.add(line);
+				    }
+			}
+
+      // Create an 11-vertex graph.
+      System.out.println("Creating a graph with 11 vertices");
+
+			UDGraph graph = new UDGraph(21);
+			Random rand = new Random();
+
+			for (int i = 0; i < graph.getNumVertices(); i++) {
+					int randomNumber = rand.nextInt(graph.getNumVertices()) + 0;
+					graph.addEdge(i, randomNumber);
+			}
+
+      System.out.println("\nThe original graph is\n" + graph);
+
+  }
+
+}

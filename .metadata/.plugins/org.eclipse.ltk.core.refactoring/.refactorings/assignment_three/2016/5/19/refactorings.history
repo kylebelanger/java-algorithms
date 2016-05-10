@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;assignment_three/src/assignment_three/Stdout.java&apos; to &apos;StdOut.java&apos;" description="Rename resource &apos;Stdout.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/assignment_three/Stdout.java" name="StdOut.java" stamp="1462307591743" updateReferences="true"/>
+</session>
